@@ -1,8 +1,8 @@
-### Question :-
+### Question
 
 Create a proper pyramid of the height entered by the user while restricting the user input between 1 and 8, both inclusive.
 
-### To print :-
+### To print
 
 ```
     # #
@@ -14,7 +14,7 @@ Create a proper pyramid of the height entered by the user while restricting the 
 or of any height user defines
 ```
 
-### Solution :-
+### Solution
 
 ```c
 #include <stdio.h>

@@ -1,8 +1,8 @@
-### Question :-
+### Question
 
 Create a program to take user from input and make a left aligned of the user-specific height
 
-### To print :-
+### To print
 
 ```
 #
@@ -14,7 +14,7 @@ Create a program to take user from input and make a left aligned of the user-spe
 or any other height that user defines
 ```
 
-### Solution :-
+### Solution
 
 ```c
 #include <stdio.h>

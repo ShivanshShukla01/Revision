@@ -1,8 +1,8 @@
-### Question :-
+### Question
 
 Take input from user and create a right aligned pyramid for the user specific height.
 
-### To print :-
+### To print
 
 ```
      #
@@ -14,7 +14,7 @@ Take input from user and create a right aligned pyramid for the user specific he
 or of any height user defines
 ```
 
-### Solution :-
+### Solution
 
 ```c
 #include <stdio.h>

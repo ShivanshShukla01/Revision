@@ -1,8 +1,8 @@
-### Question :-
+### Question
 
 Calculate the average of the scores entered by the user.
 
-### Solution :-
+### Solution
 
 ```c
 #include <stdio.h>
