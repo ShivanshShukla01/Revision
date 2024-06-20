@@ -1,4 +1,4 @@
-### Question :-
+### Question
 
 In the game of Scrabble, players create words to score points, and the number of points is the sum of the point values of each letter in the word.
 
@@ -51,7 +51,7 @@ Player 2: wiNNeR
 Player 1 Wins!
 ```
 
-### Solution :-
+### Solution
 
 ```c
 #include <stdio.h>
