@@ -73,7 +73,8 @@ int main(void)
 
 ### Algorithm Used
 
-> [!TIP] Greedy Algorithm
+> [!IMPORTANT]
+> Greedy Algorithm
 
 - A greedy algorithm always picks the best immediate solution to solve a problem.
 - For giving change, the cashier uses the largest coin first to minimize the total number of coins.

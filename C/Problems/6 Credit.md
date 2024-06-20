@@ -184,7 +184,8 @@ int first_two_digits(long number, int size)
 
 ### Algorithm Used
 
-> [!IMPORTANT] Luhn's Algorithm
+> [!IMPORTANT]
+> Luhn's Algorithm
 
 1. Multiply every other digit by 2, starting from the second-to-last digit.
 2. Sum the digits of the products:
