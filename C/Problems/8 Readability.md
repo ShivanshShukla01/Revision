@@ -156,7 +156,7 @@ float average_per_100(int value, int words)
 
 ### Algorithm Used
 
-> [!info]
+> [!IMPORTANT]
 > Coleman-Liau Index.
 
 So what sorts of traits are characteristic of higher reading levels? Well, longer words probably correlate with higher reading levels. Likewise, longer sentences probably correlate with higher reading levels, too.
