@@ -4,4 +4,4 @@ You already know about plurality elections, which follow a very simple algorithm
 
 But the plurality vote does have some disadvantages. What happens, for instance, in an election with three candidates, and the ballots below are cast?
 
-![](https://imgur.com/a/Wec5TQu)
+![](https://i.imgur.com/HEyBxtx.png)
