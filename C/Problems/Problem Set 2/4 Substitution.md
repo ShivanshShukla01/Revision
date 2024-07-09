@@ -57,12 +57,39 @@ int main(int argc, string argv[])
     if (strlen(key) != 26)
     {
         printf("Key must be of 26 characters\n");
-        return 2;
+        return 1;
+    }
+
+    //this loop is responsible for checking that is there is any duplicate characters or characters other than alphabets
+    //loop through each letter of the key
+    for (int i = 0; i < 26; i++)
+    {
+        //put the ascii value of the character in the variable to compare it with all the other ascii values, and if ascii value matches, it means there is a duplicate character
+        int compare_var = key[i];
+        //conditional make sure the character is either A - Z or a - z
+        if ((compare_var >= 65 && compare_var <= 90) || (compare_var >= 97 && compare_var <= 122))
+        {
+            //loop again for comparison of compare var value with other ascii values of the string
+            for (int j = 0; j < 26; j++)
+            {
+                if (i != j && compare_var == key[j])
+                {
+                    printf("There are duplicate characters in the key\n");
+                    return 1;
+                }
+            }
+        }
+        else
+        {
+            printf("The key contains a character which is not an Alphabet\n");
+            return 1;
+        }
+
     }
 
     //taking input from user and providing plaintext
-    string plaintext = get_string("Plaintext:  ");
-    printf("Ciphertext:  %s\n", conversion(plaintext));
+    string plaintext = get_string("Plaintext: ");
+    printf("ciphertext: %s\n", conversion(plaintext));
 
 }
 
@@ -102,6 +129,7 @@ string conversion(string input)
     return input;
 }
 
+
 ```
 
 > [!NOTE]
@@ -109,8 +137,9 @@ string conversion(string input)
 
 - the main thing to learn here is indexing
 - make the code take input from the command prompt
-  - ensured only 2 commands are given
-  - ensured only 26 letters are there are in the key
+  - ensure only 2 commands are given
+  - ensure only 26 letters are there are in the key
+  - ensure there must not be duplicate characters and characters other than Alphabets using their ASCII value.
 - taken plaintext from user and provided ciphertext
   - made function `conversion` which takes input from user as argument
   - iterate each of its letters
