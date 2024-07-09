@@ -34,6 +34,12 @@ int main(void)
     long number = get_long("Enter the Credit Card Number: ");
     int size = length(number);
 
+    if (size < 13)
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
     int sum = checksum(number, size);
 
     int one_digit = first_digit(number, size);
@@ -41,40 +47,36 @@ int main(void)
 
     if (sum % 10 == 0)
     {
-        //check if VISA
-        if (one_digit == 4)
+        //check for VISA
+        if (one_digit == 4 && (size == 13 || size == 16))
         {
-            printf("This is a Valid VISA Card\n");
+            printf("VISA\n");
+            return 0;
         }
-
-        //check if MasterCard
+        //check for american express
+        else if ((two_digits == 34 || two_digits == 37) && size == 15 )
+        {
+            printf("AMEX\n");
+            return 0;
+        }
+        //check for mastercard
+        else if ((two_digits == 51 || two_digits == 52 || two_digits == 53 || two_digits == 54 || two_digits == 55) && size == 16)
+        {
+            printf("MASTERCARD\n");
+            return 0;
+        }
         else
         {
-            int array_to_check_two_digits[] = {51, 52, 53, 54, 55};
-            for (int i = 0; i < 5; i++)
-            {
-                if (two_digits == array_to_check_two_digits[i])
-                {
-                    printf("This is a Valid MasterCard\n");
-                    return 0;
-                }
-                else if (two_digits == 34 || two_digits == 37)
-                {
-                    printf("This is a Valid American Express Card\n");
-                    return 0;
-                }
-                else
-                {
-                    printf("This is a Valid Credit Card\n");
-                    return 0;
-                }
-            }
+            printf("INVALID\n");
+            return 0;
         }
+
+
     }
 
     else
     {
-        printf("This Card Number is Not Valid\n");
+        printf("INVALID\n");
     }
 
 }
@@ -135,8 +137,7 @@ int first_digit(long number, int size)
 {
     long denominator = 1;
 
-    //the first digit can be accessed of a 16 digit number if it is divided by 1 with 15 zeros
-    //similarly number of digits in credit card number / same digit number with all zeroes and 1 at the start
+    //yaha par likho
     for (int i = 0; i < size-1; i++)
     {
         denominator *= 10;
@@ -150,8 +151,7 @@ int first_two_digits(long number, int size)
 {
     long denominator = 1;
 
-    //the first digit can be accessed of a 16 digit number if it is divided by 1 with 14 zeros
-    //similarly number of digits in credit card number / (same - 1) digit number with a zeroes and 1 at the start
+    //yaha par likho
     for (int i = 0; i < size-2; i++)
     {
         denominator *= 10;
@@ -180,7 +180,8 @@ int first_two_digits(long number, int size)
     - deleting it from the number using `/10`
     - repeating the above two steps via for loop
   - At the start of the checksum function
-- `first_digit` and `first_two_digits` to identify the credit card issuer via conditions
+- `first_digit` and `first_two_digits` to identify the credit card issuer via conditionsa
+- It verifies on the startings digits of the credit card number as given in the question and number of digits in the credit card number to verify the validity of the credit card number.
 
 ### Algorithm Used
 
