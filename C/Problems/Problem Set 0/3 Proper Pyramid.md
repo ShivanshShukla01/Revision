@@ -5,11 +5,11 @@ Create a proper pyramid of the height entered by the user while restricting the 
 ### To print
 
 ```
-    # #
-   ## ##
-  ### ###
- #### ####
-##### #####
+    #  #
+   ##  ##
+  ###  ###
+ ####  ####
+#####  #####
 
 or of any height user defines
 ```
@@ -62,7 +62,7 @@ void character(int charac)
 
 void gap(void)
 {
-    printf(" ");
+    printf("  ");
 }
 
 void r_character(int r_charac)
@@ -73,6 +73,7 @@ void r_character(int r_charac)
     }
     printf("\n");
 }
+
 ```
 
 > [!NOTE]

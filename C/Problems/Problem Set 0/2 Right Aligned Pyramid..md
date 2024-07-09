@@ -23,9 +23,17 @@ or of any height user defines
 void spaces(int space);
 void characters(int character);
 
+int height;
 int main(void)
 {
-    int height = get_int("Enter: ");
+    while (true)
+    {
+        height = get_int("Enter: ");
+        if (height > 0)
+        {
+            break;
+        }
+    }
     for (int i = (height); i > 0 ; i--)
     {
         spaces(i - 1);
@@ -49,12 +57,14 @@ void characters(int character)
     }
     printf("\n");
 }
+
 ```
 
 > [!NOTE]
 > How this works ?
 
 - user input is stored in height variable
+- make sure the input is a non-negetive integer
 - in this program, first we need to print spaces than the character
   - the number of spaces is decreasing from the given height to end of the pyramid.
 - so `spaces` function take input from for loop where the value of `i` started at height level and went to zero one by one hence printing less number of spaces each time.
