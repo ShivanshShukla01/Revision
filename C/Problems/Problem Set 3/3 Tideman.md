@@ -1,4 +1,4 @@
-### Question
+# Question
 
 You already know about plurality elections, which follow a very simple algorithm for determining the winner of an election: every voter gets one vote, and the candidate with the most votes wins.
 
@@ -21,7 +21,7 @@ Alice is, in this election, the so-called “Condorcet winner” of the election
 
 The Tideman voting method (also known as “ranked pairs”) is a ranked-choice voting method that’s guaranteed to produce the Condorcet winner of the election if one exists.
 
-### Assumed Output
+# Assumed Output
 
 ```
 $ ./tideman Alice Bob Charlie
@@ -49,7 +49,7 @@ $ ./tideman
 Usage: tideman [candidate ...]
 ```
 
-### Background
+# Background
 
 Generally speaking, the Tideman method works by constructing a “graph” of candidates, where an arrow (i.e. edge) from candidate A to candidate B indicates that candidate A wins against candidate B in a head-to-head matchup. The graph for the above election, then, would look like the below.
 
@@ -85,7 +85,7 @@ Put more formally, the Tideman voting method consists of three parts:
 
 Once the graph is complete, the source of the graph (the one with no edges pointing towards it) is the winner!
 
-### Understanding
+# Understanding
 
 Let’s take a look at `tideman.c`.
 
@@ -107,9 +107,9 @@ Once all of the votes are in, the pairs of candidates are added to the `pairs`�
 
 Further down in the file, you’ll see that the functions `vote`, `record_preference`, `add_pairs`,`sort_pairs`, `lock_pairs`, and `print_winner` are left blank. That’s up to you!
 
-### Solution
+# Solution
 
-##### Approach 1 -> The edge of the graph will be drawn - check if the created line created an infinite cycle - if yes, erase that edge
+### Approach 1 -> The edge of the graph will be drawn - check if the created line created an infinite cycle - if yes, erase that edge
 
 ```c
 /*
@@ -602,7 +602,7 @@ void no_print(int affected_index)
 
 ```
 
-##### Approach 2 -> If the creation of edge leads to the creation of infinite cycle - the edge will not get created
+### Approach 2 -> If the creation of edge leads to the creation of infinite cycle - the edge will not get created
 
 ```c
 //in the first approach, the edge(line) of graph from dominative to submissive will be drawn, check for the infinite cycle, if there is, erase the line
@@ -1047,7 +1047,7 @@ bool no_winner(int affected_index)
 
 Problem with the above self created codes - [Here](https://youtu.be/Hxxz4mqprU4)
 
-##### Code by GPT which works perfectly fine just like the above codes but also overcome the issue explained in the issue above
+### Code by GPT which works perfectly fine just like the above codes but also overcome the issue explained in the issue above
 
 ```c
 #include <cs50.h>       // Include the CS50 library for get_string and get_int functions
