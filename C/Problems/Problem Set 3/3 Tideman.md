@@ -4,14 +4,17 @@ You already know about plurality elections, which follow a very simple algorithm
 
 But the plurality vote does have some disadvantages. What happens, for instance, in an election with three candidates, and the ballots below are cast?
 ![](https://i.imgur.com/HEyBxtx.png)
+
 A plurality vote would here declare a tie between Alice and Bob, since each has two votes. But is that the right outcome?
 
 There’s another kind of voting system known as a ranked-choice voting system. In a ranked-choice system, voters can vote for more than one candidate. Instead of just voting for their top choice, they can rank the candidates in order of preference. The resulting ballots might therefore look like the below.
 ![](https://i.imgur.com/rzNfnGb.png)
+
 Here, each voter, in addition to specifying their first preference candidate, has also indicated their second and third choices. And now, what was previously a tied election could now have a winner. The race was originally tied between Alice and Bob, so Charlie was out of the running. But the voter who chose Charlie preferred Alice over Bob, so Alice could here be declared the winner.
 
 Ranked choice voting can also solve yet another potential drawback of plurality voting. Take a look at the following ballots.
 ![](https://i.imgur.com/Nq8SVYJ.png)
+
 Who should win this election? In a plurality vote where each voter chooses their first preference only, Charlie wins this election with four votes compared to only three for Bob and two for Alice. (Note that, if you’re familiar with the instant runoff voting system, Charlie wins here under that system as well). Alice, however, might reasonably make the argument that she should be the winner of the election instead of Charlie: after all, of the nine voters, a majority (five of them) preferred Alice over Charlie, so most people would be happier with Alice as the winner instead of Charlie.
 
 Alice is, in this election, the so-called “Condorcet winner” of the election: the person who would have won any head-to-head matchup against another candidate. If the election had been just Alice and Bob, or just Alice and Charlie, Alice would have won.
@@ -50,12 +53,14 @@ Usage: tideman [candidate ...]
 
 Generally speaking, the Tideman method works by constructing a “graph” of candidates, where an arrow (i.e. edge) from candidate A to candidate B indicates that candidate A wins against candidate B in a head-to-head matchup. The graph for the above election, then, would look like the below.
 ![](https://i.imgur.com/qleiaap.png)
+
 The arrow from Alice to Bob means that more voters prefer Alice to Bob (5 prefer Alice, 4 prefer Bob). Likewise, the other arrows mean that more voters prefer Alice to Charlie, and more voters prefer Charlie to Bob.
 
 Looking at this graph, the Tideman method says the winner of the election should be the “source” of the graph (i.e. the candidate that has no arrow pointing at them). In this case, the source is Alice — Alice is the only one who has no arrow pointing at her, which means nobody is preferred head-to-head over Alice. Alice is thus declared the winner of the election.
 
 It’s possible, however, that when the arrows are drawn, there is no Condorcet winner. Consider the below ballots.
 ![](https://i.imgur.com/0CJEPvC.png)
+
 Between Alice and Bob, Alice is preferred over Bob by a 7-2 margin. Between Bob and Charlie, Bob is preferred over Charlie by a 5-4 margin. But between Charlie and Alice, Charlie is preferred over Alice by a 6-3 margin. If we draw out the graph, there is no source! We have a cycle of candidates, where Alice beats Bob who beats Charlie who beats Alice (much like a game of rock-paper-scissors). In this case, it looks like there’s no way to pick a winner.
 
 To handle this, the Tideman algorithm must be careful to avoid creating cycles in the candidate graph. How does it do this? The algorithm locks in the strongest edges first, since those are arguably the most significant. In particular, the Tideman algorithm specifies that matchup edges should be “locked in” to the graph one at a time, based on the “strength” of the victory (the more people who prefer a candidate over their opponent, the stronger the victory). So long as the edge can be locked into the graph without creating a cycle, the edge is added; otherwise, the edge is ignored.
@@ -66,6 +71,7 @@ Next up is Bob’s 5-4 victory over Charlie. But notice: if we were to add an ar
 
 This step-by-step process is shown below, with the final graph at right.
 ![](https://i.imgur.com/oFqA3tE.png)
+
 Based on the resulting graph, Charlie is the source (there’s no arrow pointing towards Charlie), so Charlie is declared the winner of this election.
 
 Put more formally, the Tideman voting method consists of three parts:
