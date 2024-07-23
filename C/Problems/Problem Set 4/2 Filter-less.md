@@ -43,7 +43,7 @@ What does it even mean to filter an image? You can think of filtering an image a
 
 # How this works ?
 
-![](https://youtu.be/HGmrIlfbUj8)
+[Click here to go to YouTube](https://youtu.be/HGmrIlfbUj8)
 
 # Solution
 
