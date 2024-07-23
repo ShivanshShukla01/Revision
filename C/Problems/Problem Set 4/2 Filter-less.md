@@ -232,7 +232,9 @@ sepiaBlue = .272 * originalRed + .534 * originalGreen + .131 * originalBlue
 ### For Blur
 
 - Consider the following grid of pixels, where we’ve numbered each pixel.
-- ![](https://i.imgur.com/7sxqmqc.png)
+
+![](https://i.imgur.com/7sxqmqc.png)
+
 - The new value of each pixel would be the average of the values of all of the pixels that are within 1 row and column of the original pixel (forming a 3x3 box). For example, each of the color values for pixel 6 would be obtained by averaging the original color values of pixels 1, 2, 3, 5, 6, 7, 9, 10, and 11 (note that pixel 6 itself is included in the average). Likewise, the color values for pixel 11 would be be obtained by averaging the color values of pixels 6, 7, 8, 10, 11, 12, 14, 15 and 16.
 - For a pixel along the edge or corner, like pixel 15, we would still look for all pixels within 1 row and column: in this case, pixels 10, 11, 12, 14, 15, and 16.
 
