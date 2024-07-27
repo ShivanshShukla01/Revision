@@ -1048,7 +1048,7 @@ bool no_winner(int affected_index)
 
 ```
 
-Problem with the above self created codes - [Here](https://youtu.be/Hxxz4mqprU4)
+Problem with the above self created codes - [Here](https://youtu.be/fKDMQkMcKFI)
 
 ### Code by GPT which works perfectly fine just like the above codes but also overcome the issue explained in the issue above
 
