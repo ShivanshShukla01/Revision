@@ -1,5 +1,5 @@
 # Question
-You can find the Question [Here](https://github.com/ShivanshShukla01/Revision/blob/main/C/Problems/Problem%20Set%202/2%20Readability.md)
+You can find the Question [Here](https://github.com/ShivanshShukla01/Revision/blob/main/CS50x/C/Problems/Problem%20Set%202/2%20Readability.md)
 
 # Solution
 ```python

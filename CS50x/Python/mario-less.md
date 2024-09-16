@@ -1,5 +1,5 @@
 # Question
-You can find the Question [Here](https://github.com/ShivanshShukla01/Revision/blob/main/C/Problems/Problem%20Set%200/2%20Right%20Aligned%20Pyramid..md)
+You can find the Question [Here](https://github.com/ShivanshShukla01/Revision/blob/main/CS50x/C/Problems/Problem%20Set%200/2%20Right%20Aligned%20Pyramid..md)
 
 # Solution
 ```python
